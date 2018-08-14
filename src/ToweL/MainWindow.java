@@ -106,6 +106,8 @@ public class MainWindow {
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		
+		//PLAYER SPEED BUTTONS
+		
 		Group grpPlayerSpeed = new Group(shell, SWT.NONE);
 		grpPlayerSpeed.setText("Player Speed");
 		grpPlayerSpeed.setLayout(new GridLayout(1, false));
@@ -113,15 +115,15 @@ public class MainWindow {
 		Button btnNormal_Player = new Button(grpPlayerSpeed, SWT.RADIO);
 		btnNormal_Player.setSelection(true);
 		btnNormal_Player.setText("Normal");
-//		btnNormal_Player.addSelectionListener(selectionListener);
+
 		
 		Button btnFast_Player = new Button(grpPlayerSpeed, SWT.RADIO);
-//		btnFast_Player.addSelectionListener(selectionListener);
 		btnFast_Player.setText("Fast");
 		
 		Button btnLudicrousSpeed_Player = new Button(grpPlayerSpeed, SWT.RADIO);
 		btnLudicrousSpeed_Player.setText("Ludicrous Speed");
-//		btnLudicrousSpeed_Player.addSelectionListener(selectionListener);
+
+		//SHIP SPEED BUTTONS
 		
 		Group grpShipSpeed = new Group(shell, SWT.NONE);
 		grpShipSpeed.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, false, 1, 1));
@@ -138,6 +140,8 @@ public class MainWindow {
 		Button btnLudicrousSpeed_Ship = new Button(grpShipSpeed, SWT.RADIO);
 		btnLudicrousSpeed_Ship.setText("Ludicrous Speed");
 		
+		//STORM FREQ BUTTONS
+		
 		Group grpStormFrequency = new Group(shell, SWT.NONE);
 		grpStormFrequency.setText("Storm Frequency");
 		grpStormFrequency.setLayout(new GridLayout(1, false));
@@ -151,6 +155,9 @@ public class MainWindow {
 		
 		Button btnNone = new Button(grpStormFrequency, SWT.RADIO);
 		btnNone.setText("None");
+		
+		
+		
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
@@ -394,12 +401,32 @@ public class MainWindow {
 //				
 //				}
 //				
-//				try {
-//					Runtime.getRuntime().exec("./MBINCompiler.exe ./raw/ ./packed/");
-//				} catch (IOException e1) {
-//					// TODO Auto-generated catch block
-//					e1.printStackTrace();
-//				}
+				try {
+					Runtime.getRuntime().exec("./MBINCompiler.exe ./raw/ ./packed/");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			
+				try {
+					Runtime.getRuntime().exec("PSArcTool.exe ./packed");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				
+				try {
+					
+					FileUtils.moveFile(FileUtils.getFile("./psarc.pak"), FileUtils.getFile("./DECEARING_EGG.pak"));
+					
+//					FileUtils.moveFile(
+//				      FileUtils.getFile("./psarc.pak"), 
+//				      FileUtils.getFile("./DECEARING_EGG.pak"));
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+
 				System.out.println("testt222");
 				//replaceSelected("test", "1");
 			}
@@ -408,6 +435,12 @@ public class MainWindow {
 		
 		
 
+	}
+	
+	public void rename_Pak() throws IOException {
+	    FileUtils.moveFile(
+	      FileUtils.getFile("src/test/resources/fileToMove.txt"), 
+	      FileUtils.getFile("src/test/resources/fileMoved.txt"));
 	}
 	
 	public static void replace(String path, String file, String original, String replace) {
