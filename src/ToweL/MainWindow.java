@@ -64,35 +64,15 @@ public class MainWindow {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setSize(724, 498);
+		shell.setSize(836, 523);
 		shell.setText("TOWEL");
-		shell.setLayout(new GridLayout(17, false));
+		shell.setLayout(new GridLayout(7, false));
 		new Label(shell, SWT.NONE);
 		
 		Label lblBigText = new Label(shell, SWT.NONE);
 		lblBigText.setFont(SWTResourceManager.getFont("Comic Sans MS", 15, SWT.NORMAL));
 		lblBigText.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 1, 1));
 		lblBigText.setText("BIG TEXT");
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
@@ -127,7 +107,7 @@ public class MainWindow {
 		//SHIP SPEED BUTTONS
 		
 		Group grpShipSpeed = new Group(shell, SWT.NONE);
-		grpShipSpeed.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, false, 1, 1));
+		grpShipSpeed.setLayoutData(new GridData(SWT.CENTER, SWT.TOP, false, false, 1, 1));
 		grpShipSpeed.setText("Ship Speed");
 		grpShipSpeed.setLayout(new GridLayout(1, false));
 		
@@ -170,20 +150,23 @@ public class MainWindow {
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
+		
+		Button btnInstantScan = new Button(shell, SWT.CHECK);
+		btnInstantScan.setText("Instant Scan");
+		
+		Button btnFlyUnderwater = new Button(shell, SWT.CHECK);
+		btnFlyUnderwater.setText("Fly Underwater");
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
+		
+		Button btnxStackSize = new Button(shell, SWT.CHECK);
+		btnxStackSize.setText("42x Stack Size");
+		
+		Button btnUnlimitedShipFuel = new Button(shell, SWT.CHECK);
+		btnUnlimitedShipFuel.setText("Unlimited Ship Fuel");
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
@@ -191,140 +174,16 @@ public class MainWindow {
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		
-		Button btnInstantScan = new Button(shell, SWT.CHECK);
-		btnInstantScan.setText("Instant Scan");
+		Button btnIncreasedHyperdriveDistance = new Button(shell, SWT.CHECK);
+		btnIncreasedHyperdriveDistance.setText("Increased Hyperdrive Distance");
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
-		new Label(shell, SWT.NONE);
+		
+		Button btnInstantHealthRegen = new Button(shell, SWT.CHECK);
+		btnInstantHealthRegen.setText("Instant Health Regen");
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
 		new Label(shell, SWT.NONE);
@@ -345,6 +204,8 @@ public class MainWindow {
 		new Label(shell, SWT.NONE);
 		
 		Button btnTest = new Button(shell, SWT.NONE);
+		btnTest.setForeground(SWTResourceManager.getColor(SWT.COLOR_MAGENTA));
+		btnTest.setFont(SWTResourceManager.getFont("Comic Sans MS", 12, SWT.NORMAL));
 		btnTest.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
@@ -437,24 +298,24 @@ public class MainWindow {
 				}
 				
 				
-				try {
-					FileUtils.deleteQuietly(FileUtils.getFile("./DECEARING_EGG.pak"));
-					TimeUnit.SECONDS.sleep(1);
-					
-					FileUtils.moveFile(FileUtils.getFile("./psarc.pak"), FileUtils.getFile("./DECEARING_EGG.pak"));
-					
-//					FileUtils.moveFile(
-//				      FileUtils.getFile("./psarc.pak"), 
-//				      FileUtils.getFile("./DECEARING_EGG.pak"));
-				} catch (Exception e2) {
-					// TODO: handle exception
-				}
+//				try {
+//					FileUtils.deleteQuietly(FileUtils.getFile("./DECEARING_EGG.pak"));
+//					TimeUnit.SECONDS.sleep(1);
+//					
+//					FileUtils.moveFile(FileUtils.getFile("./psarc.pak"), FileUtils.getFile("./DECEARING_EGG.pak"));
+//					
+////					FileUtils.moveFile(
+////				      FileUtils.getFile("./psarc.pak"), 
+////				      FileUtils.getFile("./DECEARING_EGG.pak"));
+//				} catch (Exception e2) {
+//					// TODO: handle exception
+//				}
 
 				System.out.println("testt222");
 				//replaceSelected("test", "1");
 			}
 		});
-		btnTest.setText("Test");
+		btnTest.setText("MAKE THE DECEARING EGG");
 		
 		
 
