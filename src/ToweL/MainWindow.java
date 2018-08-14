@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.eclipse.swt.SWT;
@@ -351,6 +352,19 @@ public class MainWindow {
 				
 				//COPY ORIGINAL FILES TO WORKING DIRECTORY
 				
+				
+				//Clean up old files
+				FileUtils.deleteQuietly(FileUtils.getFile("./raw/"));
+				FileUtils.deleteQuietly(FileUtils.getFile("./packed/"));
+				FileUtils.deleteQuietly(FileUtils.getFile("./psarc.pak"));
+				FileUtils.deleteQuietly(FileUtils.getFile("./DECEARING_EGG.pak"));
+				try {
+					TimeUnit.SECONDS.sleep(1);
+				} catch (InterruptedException e3) {
+					// TODO Auto-generated catch block
+					e3.printStackTrace();
+				}
+				
 				String source = "./orig";
 				File srcDir = new File(source);
 
@@ -402,21 +416,30 @@ public class MainWindow {
 //				}
 //				
 				try {
-					Runtime.getRuntime().exec("./MBINCompiler.exe ./raw/ ./packed/");
-				} catch (IOException e1) {
+					//FileUtils.deleteQuietly(FileUtils.getFile("./raw/"));
+					//FileUtils.deleteQuietly(FileUtils.getFile("./packed/"));
+					Process mbin = Runtime.getRuntime().exec("./MBINCompiler.exe ./raw/ ./packed/");
+					mbin.waitFor();
+				} catch (IOException | InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			
+				
+				
 				try {
-					Runtime.getRuntime().exec("PSArcTool.exe ./packed");
-				} catch (IOException e1) {
+					
+					Process psarc = Runtime.getRuntime().exec("PSArcTool.exe ./packed");
+					psarc.waitFor();
+				} catch (IOException | InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				
 				
 				try {
+					FileUtils.deleteQuietly(FileUtils.getFile("./DECEARING_EGG.pak"));
+					TimeUnit.SECONDS.sleep(1);
 					
 					FileUtils.moveFile(FileUtils.getFile("./psarc.pak"), FileUtils.getFile("./DECEARING_EGG.pak"));
 					
